@@ -1,4 +1,4 @@
-### derisk
+### Derisk
 AI-Native Risk Intelligence Systems 
 
 ### Acknowledgement 
