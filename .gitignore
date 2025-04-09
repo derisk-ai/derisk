@@ -4,8 +4,12 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
-
+message/
+packages/derisk-core/src/derisk/util/extensions/
+.env*
+.vscode
+.idea
+.chroma
 # Distribution / packaging
 .Python
 build/
@@ -14,12 +18,18 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
+
 var/
 wheels/
+/models/
+# Soft link
+/models
+plugins/
+
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -31,12 +41,14 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-
+*.zuo
+*.zip
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+test_files/
+# Unit test_py / coverage reports
 htmlcov/
 .tox/
 .nox/
@@ -49,14 +61,14 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-cover/
 
 # Translations
-*.mo
+# *.mo
 *.pot
 
 # Django stuff:
 *.log
+*.log.*
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -72,7 +84,6 @@ instance/
 docs/_build/
 
 # PyBuilder
-.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -83,8 +94,6 @@ profile_default/
 ipython_config.py
 
 # pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
 # .python-version
 
 # pipenv
@@ -94,30 +103,7 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
 # Celery stuff
@@ -135,6 +121,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv.make/
 
 # Spyder project settings
 .spyderproject
@@ -153,22 +140,53 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+logs
+nltk_data
+.vectordb
+pilot/data/
+pilot/nltk_data
+pilot/mock_datas/derisk-test.db.wal
+pilot/embedding_*
 
-# pytype static type analyzer
-.pytype/
+logswebserver.log.*
+.history/*
+.plugin_env
+/pilot/meta_data/alembic/versions/*
+/pilot/meta_data/*.db
+# Ignore for now
+thirdparty
 
-# Cython debug symbols
-cython_debug/
+#web
+# dependencies
+/web/node_modules
+/web/yarn.lock
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+.idea
+# next.js
+/web/.next/
+/web/out/
 
-# Ruff stuff:
-.ruff_cache/
+# production
+/web/build
 
-# PyPI configuration file
-.pypirc
+# debug
+/web/npm-debug.log*
+/web/yarn-debug.log*
+/web/yarn-error.log*
+
+# local env files
+/web/.env.prod
+/web/.env
+
+# typescript
+*.tsbuildinfo
+/web/next-env.d.ts
+
+# Ignore awel DAG visualization files
+/examples/**/*.gv
+/examples/**/*.gv.pdf
+/i18n/locales/**/**/*_ai_translated.po
+/i18n/locales/**/**/*~
+configs/my
+/configs/local/
