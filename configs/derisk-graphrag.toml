@@ -34,7 +34,7 @@ type = "TuGraph"
 host="127.0.0.1"
 port=7687
 username="admin"
-password="73@TuGraph"
+password="{your_password}"
 
 # enable_summary="True"
 # community_topk=20
